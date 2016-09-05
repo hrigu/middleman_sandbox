@@ -1,0 +1,36 @@
+---
+menu: home
+title: Leute von heute
+---
+
+<div>
+  <h1>Middleman Sandbox</h1>
+
+  <p class="lead">
+    Sandbox app for testing:
+  </p>
+  <ul>
+    <li>Twitter Bootstrap</li>
+    <li>Dynamic Pages</li>
+    <li>18n</li>
+  </ul>
+</div>
+
+
+<p class="lead">
+  current language
+</p>
+<ul>
+  <li>Language: <%= t(:language) %> </li>
+  <li>Locale: <%= I18n.locale %> </li>
+</ul>
+
+<div>
+
+  <h1>people</h1>
+  <ul>
+    <% data.people.people.each do |r| %>
+        <li><%= r.vorname %> <%= r.nachname %></li> <%= link_to "Details", "/#{I18n.locale}/people/#{r.id}.html" %>
+    <% end %>
+  </ul>
+</div>

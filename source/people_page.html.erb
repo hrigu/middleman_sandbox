@@ -1,0 +1,38 @@
+---
+menu: home
+title: Alle Personen
+---
+
+<h3>
+  current language
+</h3>
+<ul>
+  <li>Locale: <%= I18n.locale %> </li>
+  <li>Language: <%= t(:language) %> </li>
+  <li><%= t(:hello) %> </li>
+</ul>
+
+
+<h3>
+  Info
+</h3>
+
+<ul>
+  <li><%= eval "#{json}.vorname" %></li>
+  <li><%= eval "#{json}.nachname" %></li>
+</ul>
+
+
+<h3>
+  Kommentare
+</h3>
+<%eval("#{json}.kommentare").each do |k| %>
+  <div class="well">
+    <%= k.kommentar %>
+  </div>
+<% end %>
+
+
+
+
+

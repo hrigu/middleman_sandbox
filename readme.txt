@@ -3,6 +3,7 @@ Test application
 ================
 * twitter bootstrap
 * Dynamic Pages
+** with data from json
 * I18n
 * relative pathes
 

@@ -14,10 +14,11 @@ page '/*.txt', layout: false
 # page "/path/to/file.html", layout: :otherlayout
 
 
-[:en, :tr].each do |l|
+[:en, :tr].each do |locale|
   data.people.people.each do |r|
-    proxy "/#{l}/people/#{r.id}.html", "/people_page.html",
-          locals: {json: "data._#{r.id}", lang: l},
+    proxy "/#{locale}/people/#{r.id}.html", "/localizable/people_page.html",
+          locals: {json: "data._#{r.id}"},
+          lang: locale,
           ignore: true
   end
 end
@@ -30,7 +31,7 @@ end
 
 activate :sprockets
 
-activate :i18n
+activate :i18n, mount_at_root: false
 
 # also activate :relative_assets
 set :relative_links, true
@@ -48,8 +49,13 @@ end
 helpers do
   def is_menu_active menu, page
     menu == page.data.menu ? "active" : "inactive"
-
   end
+
+  def current_path_without_locale
+    current_path[3..-1]  # ohne en/ oder tr/
+  end
+
+
 end
 
 # Build-specific configuration

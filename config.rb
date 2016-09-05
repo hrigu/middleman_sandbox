@@ -19,9 +19,11 @@ page '/*.txt', layout: false
     proxy "/#{locale}/people/#{r.id}.html", "/localizable/people_page.html",
           locals: {json: "data._#{r.id}"},
           lang: locale,
-          ignore: true
+          ignore: true # TODO funktioniert nicht, wegen den locales?
   end
 end
+
+#ignore "/localizable/people_page.html"
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {

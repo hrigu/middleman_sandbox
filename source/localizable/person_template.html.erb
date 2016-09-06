@@ -26,9 +26,9 @@ title: Alle Personen
 <h3>
   Kommentare
 </h3>
-<%eval("#{json}.kommentare").each do |k| %>
+<%eval("#{json}.comments").each do |k| %>
   <div class="well">
-    <%= k.kommentar %>
+    <%= k %>
   </div>
 <% end %>
 

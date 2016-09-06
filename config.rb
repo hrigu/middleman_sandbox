@@ -15,15 +15,15 @@ page '/*.txt', layout: false
 
 
 [:en, :tr].each do |locale|
-  data.people.people.each do |r|
-    proxy "/#{locale}/people/#{r.id}.html", "/localizable/people_page.html",
+  data.people.each do |r|
+    proxy "/#{locale}/person/#{r.id}.html", "/localizable/person_template.html",
           locals: {json: "data._#{r.id}"},
           lang: locale,
           ignore: true # TODO funktioniert nicht, wegen den locales?
   end
 end
 
-#ignore "/localizable/people_page.html"
+#ignore "/localizable/person_template.html"
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {

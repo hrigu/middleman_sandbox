@@ -15,10 +15,13 @@ page '/*.txt', layout: false
 
 
 [:en, :tr].each do |locale|
-  data.people.each do |r|
-    proxy "/#{locale}/person/#{r.id}.html", "/localizable/person_template.html",
-          locals: {json: "data._#{r.id}"},
-          lang: locale,
+  data.people.each do |person|
+    proxy "/#{locale}/person/#{person.id}.html", "/localizable/person_template.html",
+          locals: {
+              json: "data._#{person.id}",
+              #person: eval("data._#{person.id}")
+          },
+          locale: locale,
           ignore: true # TODO funktioniert nicht, wegen den locales?
   end
 end

@@ -1,7 +1,9 @@
 ---
 menu: home
-title: Alle Personen
+title: Details
 ---
+
+<% person = eval json %>
 
 <h3>
   current language
@@ -18,9 +20,15 @@ title: Alle Personen
 </h3>
 
 <ul>
-  <li><%= eval "#{json}.first_name" %></li>
-  <li><%= eval "#{json}.family_name" %></li>
+  <li><%= person.first_name %></li>
+  <li><%= person.family_name %></li>
 </ul>
+
+
+<%= link_to "previous", "/#{I18n.locale}/person/#{Integer(person.id) -1}.html" %>
+<%= link_to "next", "/#{I18n.locale}/person/#{Integer(person.id) + 1}.html" %>
+
+<%= link_to "back", "/people.html" %>
 
 
 <h3>

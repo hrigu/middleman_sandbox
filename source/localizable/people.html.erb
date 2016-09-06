@@ -30,7 +30,7 @@ title: People
   <h1>people</h1>
   <ul>
     <% data.people.people.each do |r| %>
-        <li><%= r.vorname %> <%= r.nachname %></li> <%= link_to "Details", "/#{I18n.locale}/people/#{r.id}.html" %>
+        <li><%= r.first_name %> <%= r.family_name %></li> <%= link_to "Details", "/#{I18n.locale}/people/#{r.id}.html" %>
     <% end %>
   </ul>
 </div>

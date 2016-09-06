@@ -1,8 +1,0 @@
-{
-  "id": 2,
-  "vorname": "Kurt",
-  "nachname": "Knurr",
-  "kommentare": [
-    {"kommentar": "Sehr wichtig", "datum": "2016-08-10"}, {"kommentar": "auch wichtig Kommentar", "datum": "2016-08-11"}
-  ]
-}

@@ -3,51 +3,26 @@ menu: people
 title: People
 ---
 
-<div>
-  <h1>Middleman Sandbox</h1>
-
-  <p class="lead">
-    Sandbox app for testing:
-  </p>
-  <ul>
-    <li>Twitter Bootstrap</li>
-    <li>Dynamic Pages</li>
-    <li>18n</li>
-  </ul>
-</div>
-
-
-<p class="lead">
-  current language
-</p>
-<ul>
-  <li>Language: <%= t(:language) %> </li>
-  <li>Locale: <%= I18n.locale %> </li>
-</ul>
-
-
-
 <div class="page-header">
   <h1> People
     <small>List of people</small>
   </h1>
 </div>
 
-
 <div class="table-responsive">
 
-  <table id="people_table" class="table table-striped table-bordered sortable">
+  <table id="people_table" class="table table-striped table-bordered" data-toggle="table" data-filter-control="true">
     <thead>
     <tr>
-      <th>
+      <th data-field="first_name" data-sortable="true" data-filter-control="input">
         First name
       </th>
-      <th>Family name</th>
-      <th>Lawyer</th>
+      <th data-field="family_name" data-sortable="true" data-filter-control="input">Family name</th>
+      <th data-field="lawyer" data-sortable="true" data-filter-control="select" data-filter-strict-search="true">Lawyer</th>
       <th>Contact persons</th>
-      <th>created at</th>
-      <th>updated at</th>
-      <th colspan="3" data-defaultsort='disabled' >actions</th>
+      <th data-sortable="true">created at</th>
+      <th data-sortable="true">updated at</th>
+      <th>actions</th>
     </tr>
     </thead>
 

@@ -18,3 +18,4 @@
 // require_tree .
 //= require "bootstrap-table.js"
 //= require "bootstrap-table-filter-control.js"
+//= require "bootstrap-table-cookie.js"

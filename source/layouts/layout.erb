@@ -11,6 +11,9 @@
 
   <title><%= current_page.data.title || "Middleman" %></title>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <%= javascript_include_tag :all %>
+
   <!-- Bootstrap core CSS -->
   <%= stylesheet_link_tag :site %>
 
@@ -30,13 +33,6 @@
 </div><!-- /.container -->
 <%= partial "footer" %>
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<%= javascript_include_tag :all %>
 </body>
 
 

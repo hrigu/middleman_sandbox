@@ -60,6 +60,10 @@ helpers do
     current_path[3..-1]  # ohne en/ oder tr/
   end
 
+  def localize_date_time date_time_as_text
+    DateTime.parse(date_time_as_text).strftime("%m.%d.%Y, %H:%M")
+  end
+
 
 end
 

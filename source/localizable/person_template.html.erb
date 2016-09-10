@@ -34,10 +34,12 @@ title: Details
 <h3>
   Kommentare
 </h3>
-<%eval("#{json}.comments").each do |k| %>
-  <div class="well">
-    <%= k %>
-  </div>
+<%eval("#{json}.comments").each do |comment| %>
+
+    <div class="bs-callout bs-callout-info">
+      <h5>Author: <%= comment.author %> vom <%= localize_date_time comment.created_at%></h5>
+      <p><%= comment.content.html_safe %></p>
+    </div>
 <% end %>
 
 

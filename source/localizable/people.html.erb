@@ -24,6 +24,8 @@ title: People
 
     <thead>
     <tr>
+      <th data-field="s_n" data-sortable="true">SN</th>
+      <th data-field="register_number" data-sortable="true" data-filter-control="input">register_number</th>
       <th data-field="first_name" data-sortable="true" data-filter-control="input">
         First name
       </th>
@@ -32,6 +34,7 @@ title: People
       <th>Contact persons</th>
       <th data-sortable="true">created at</th>
       <th data-sortable="true">updated at</th>
+      <th data-sortable="true">Comments</th>
       <th>actions</th>
     </tr>
     </thead>
@@ -39,12 +42,15 @@ title: People
     <tbody>
     <% data.people.each do |person| %>
         <tr>
+          <td><%= person.s_n %></td>
+          <td><%= person.register_number %></td>
           <td><%= person.first_name %></td>
           <td><%= person.family_name %></td>
           <td><%= person.lawyer %></td>
           <td><%= person.contact_persons %></td>
-          <td><%= person.created_at %></td>
-          <td><%= person.updated_at %></td>
+          <td><%= localize_date_time(person.created_at)%></td>
+          <td><%= localize_date_time person.updated_at %></td>
+          <td><span class="badge"><%= person.comments_count%></span></td>
           <td><%= link_to "Show", "/#{I18n.locale}/person/#{person.id}.html" %></td>
         </tr>
     <% end %>
